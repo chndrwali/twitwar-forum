@@ -12,6 +12,13 @@
   },
   "plugins": ["react"],
   "rules": {
-    "eol-last": "off"
+    "eol-last": "off",
+    "linebreak-style": "off",
+    "no-alert": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": "off"
   }
 }
