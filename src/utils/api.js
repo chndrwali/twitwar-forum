@@ -228,6 +228,110 @@ const api = (() => {
     return vote;
   }
 
+  async function neutralizeVoteThread(id) {
+    const response = await _fetchWithAuth(
+      `${BASE_URL}/threads/${id}/neutral-vote`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const {
+      data: { vote },
+    } = responseJson;
+
+    return vote;
+  }
+
+  async function upvoteComment(threadId, commentId) {
+    const response = await _fetchWithAuth(
+      `${BASE_URL}/threads/${threadId}/comments/${commentId}/up-vote`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const {
+      data: { vote },
+    } = responseJson;
+
+    return vote;
+  }
+
+  async function downvoteComment(threadId, commentId) {
+    const response = await _fetchWithAuth(
+      `${BASE_URL}/threads/${threadId}/comments/${commentId}/down-vote`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const {
+      data: { vote },
+    } = responseJson;
+
+    return vote;
+  }
+
+  async function neutralizevoteComment(threadId, commentId) {
+    const response = await _fetchWithAuth(
+      `${BASE_URL}/threads/${threadId}/comments/${commentId}/neutralize-vote`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const {
+      data: { vote },
+    } = responseJson;
+
+    return vote;
+  }
+
   async function getLeaderboards() {
     const response = await fetch(`${BASE_URL}/leaderboards`);
 
@@ -253,9 +357,13 @@ const api = (() => {
     getAllUsers,
     getAllThreads,
     createThreads,
-    toggleCommentThreads,
-    toggleUpVoteThreads,
-    toggleDownVoteThreads,
+    createComment,
+    upvoteComment,
+    downvoteComment,
+    neutralizevoteComment,
+    upVoteThreads,
+    downVoteThreads,
+    neutralizeVoteThread,
     getDetailThreads,
     getLeaderboards,
   };
