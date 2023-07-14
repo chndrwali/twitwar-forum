@@ -159,14 +159,14 @@ const api = (() => {
     return thread;
   }
 
-  async function toggleCommentThreads(id) {
-    const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/comments`, {
+  async function createComment(threadId, content) {
+    const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadId}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        content: id,
+        content,
       }),
     });
 
@@ -177,17 +177,19 @@ const api = (() => {
     if (status !== 'success') {
       throw new Error(message);
     }
+    const {
+      data: { comment },
+    } = responseJson;
+
+    return comment;
   }
 
-  async function toggleUpVoteThreads(id) {
+  async function upVoteThreads(id) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/up-vote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        threadId: id,
-      }),
     });
 
     const responseJson = await response.json();
@@ -197,17 +199,19 @@ const api = (() => {
     if (status !== 'success') {
       throw new Error(message);
     }
+
+    const {
+      data: { vote },
+    } = responseJson;
+    return vote;
   }
 
-  async function toggleDownVoteThreads(id) {
+  async function downVoteThreads(id) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/down-vote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        threadId: id,
-      }),
     });
 
     const responseJson = await response.json();
@@ -217,6 +221,11 @@ const api = (() => {
     if (status !== 'success') {
       throw new Error(message);
     }
+
+    const {
+      data: { vote },
+    } = responseJson;
+    return vote;
   }
 
   async function getLeaderboards() {
