@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { FaObjectGroup } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import RegisterInput from '../components/RegisterInput';
 import { asyncRegisterUser } from '../states/users/action';
 
@@ -9,19 +10,13 @@ function RegisterPage() {
   const dispatch = useDispatch();
 
   const onRegister = ({ name, email, password }) => {
-    dispatch(asyncRegisterUser({ email, name, password }));
-
+    dispatch(asyncRegisterUser({ name, email, password }));
     navigate('/');
   };
 
   return (
     <section className="register-page">
-      <header className="register-page__hero">
-        <h1>
-          poh
-        </h1>
-      </header>
-      <article className="register-page__main">
+      <article className="register-main">
         <h2>Create your account</h2>
         <RegisterInput register={onRegister} />
 
@@ -30,6 +25,12 @@ function RegisterPage() {
           {' '}
           <Link to="/">Login</Link>
         </p>
+      </article>
+      <article className="register-app-logo">
+        <h1>
+          <FaObjectGroup className="accent-logo" />
+        </h1>
+        <p>Forum Threads</p>
       </article>
     </section>
   );

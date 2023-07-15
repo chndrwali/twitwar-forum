@@ -1,32 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FaObjectGroup } from 'react-icons/fa';
+import React from 'react';
 import LoginInput from '../components/LoginInput';
 import { asyncSetAuthUser } from '../states/authUser/action';
 
 function LoginPage() {
   const dispatch = useDispatch();
-
   const onLogin = ({ email, password }) => {
     dispatch(asyncSetAuthUser({ email, password }));
   };
 
   return (
     <section className="login-page">
-      <header className="login-page__hero">
-        <h1>poh</h1>
+      <header className="login-app-logo">
+        <h1>
+          <FaObjectGroup className="accent-logo" />
+        </h1>
+        <p>Forum Threads</p>
       </header>
-      <article className="login-page__main">
+      <article className="login-main">
         <h2>
-          See
+          Sharing
           {' '}
-          <strong>The World</strong>
+          <b>knowledge</b>
           ,
-          {' '}
           <br />
-          Through Open Space.
+          {' '}
+          one threads at a time
         </h2>
-
         <LoginInput login={onLogin} />
         <p>
           Don&apos;t have an account?

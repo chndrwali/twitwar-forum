@@ -1,31 +1,37 @@
 import React from 'react';
+import {
+  MdCreate, MdGroup, MdLeaderboard, MdLogout,
+} from 'react-icons/md';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Navigation({ authUser, signOut }) {
-  const { email, avatar, name } = authUser;
-
+function Navigation({ signout }) {
   return (
-    <div className="navigation">
-      <img src={avatar} alt={email} title={name} />
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-      <button type="button" onClick={signOut}>Sign out</button>
+    <div className="navigation-form">
+      <Link to="/create">
+        <button type="button" className="nav-btn" title="Threads">
+          <MdCreate className="nav-icon" />
+        </button>
+      </Link>
+      <Link to="/">
+        <button type="button" className="nav-btn" title="Threads">
+          <MdGroup className="nav-icon" />
+        </button>
+      </Link>
+      <Link to="/leaderboards">
+        <button type="button" className="nav-btn" title="Leaderboard">
+          <MdLeaderboard className="nav-icon" />
+        </button>
+      </Link>
+      <button type="button" className="nav-btn" onClick={signout} title="Sign out">
+        <MdLogout className="nav-icon" />
+      </button>
     </div>
   );
 }
 
-const authUserShape = {
-  email: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-
-};
-
 Navigation.propTypes = {
-  authUser: PropTypes.shape(authUserShape).isRequired,
-  signOut: PropTypes.func.isRequired,
+  signout: PropTypes.func.isRequired,
 };
 
 export default Navigation;

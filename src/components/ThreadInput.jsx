@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import useInput from '../hooks/useInput';
 
-function ThreadInput({ addThread }) {
-  const [title, body, setBody, setTitle] = useState('');
+function ThreadInput({ onCreate }) {
+  const [title, onTitleChange] = useInput('');
+  const [category, onCategoryChange] = useInput('');
+  const [body, setValue] = React.useState('');
 
-  function addthread() {
-    if (body.trim()) {
-      addThread(title);
-      setTitle('');
-      addThread(body);
-      setBody('');
-    }
-  }
-
-  function handleBodyChange({ target }) {
-    if (target.value.length <= 320) {
-      setBody(target.value);
-    }
-  }
+  const onChange = (e) => {
+    const html = e.target.innerHTML;
+    setValue(html);
+  };
 
   return (
-    <div className="talk-input">
-      <textarea type="text" placeholder="What are you thinking?" value={body} onChange={handleBodyChange} />
-      <p className="talk-input__char-left">
-        <strong>{body.length}</strong>
-        /320
-      </p>
-      <button type="submit" onClick={addthread}>Talk</button>
+    <div className="create-thread-page">
+      <h2>Create new thread</h2>
+      <form className="create-thread-input">
+        <input type="text" placeholder="Title" value={title} onChange={onTitleChange} />
+        <input type="text" placeholder="Category" value={category} onChange={onCategoryChange} />
+        <div
+          className="input-body"
+          contentEditable
+          onInput={onChange}
+          data-testid="input-body"
+        />
+        <button type="button" onClick={() => onCreate({ title, category, body })}>Create</button>
+      </form>
     </div>
   );
 }
 
 ThreadInput.propTypes = {
-  addThread: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
 };
 
 export default ThreadInput;

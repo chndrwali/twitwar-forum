@@ -19,4 +19,4 @@ function postedAt(date) {
   return 'just now';
 }
 
-export { postedAt };
+export default postedAt;

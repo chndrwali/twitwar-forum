@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import ThreadInput from '../components/ThreadInput';
-import ThreadList from '../components/ThreadList';
+import { useDispatch, useSelector } from 'react-redux';
+import ThreadsList from '../components/ThreadList';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
-import { asyncAddThread, asyncToogleVoteThread } from '../states/thread/action';
+import useInput from '../hooks/useInput';
+import CategoryList from '../components/CategoryList';
 
 function HomePage() {
   const {
@@ -11,30 +11,29 @@ function HomePage() {
     users = [],
     authUser,
   } = useSelector((states) => states);
+  const [category, onCategoryChange] = useInput('');
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
 
-  const onAddThread = (content) => {
-    dispatch(asyncAddThread({ content }));
-  };
-
-  const onLike = (id) => {
-    dispatch(asyncToogleVoteThread(id));
-  };
-
   const threadList = threads.map((thread) => ({
     ...thread,
-    user: users.find((user) => user.id === thread.user),
+    user: users.find((user) => user.id === thread.ownerId),
     authUser: authUser.id,
   }));
 
+  const filteredThreads = threadList.filter((thread) => thread.category === category);
   return (
     <section className="home-page">
-      <ThreadInput addTalk={onAddThread} />
-      <ThreadList talks={threadList} like={onLike} />
+      <CategoryList onCategoryChange={onCategoryChange} />
+      {
+        category === '' || category === ' '
+          ? <ThreadsList className="thread-list" threadList={threadList} />
+          : <ThreadsList className="thread-list" threadList={filteredThreads} />
+      }
     </section>
   );
 }
