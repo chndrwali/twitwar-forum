@@ -27,7 +27,7 @@ function LoginInput({ login }) {
         type="button"
         onClick={() => login({ email, password })}
       >
-        Login
+        Masuk
 
       </button>
     </form>

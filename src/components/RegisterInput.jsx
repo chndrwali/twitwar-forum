@@ -8,11 +8,36 @@ function RegisterInput({ register }) {
   const [password, onPasswordChange] = useInput('');
 
   return (
-    <form className="register-input">
-      <input type="text" value={name} onChange={onNameChange} placeholder="Name" />
-      <input type="text" value={email} onChange={onEmailChange} placeholder="Username" />
-      <input type="password" value={password} onChange={onPasswordChange} placeholder="Password" />
-      <button type="button" onClick={() => register({ name, email, password })}>Register</button>
+    <form>
+      <input
+        className="w-full p-2 border border-gray-300 rounded mb-4"
+        type="text"
+        value={name}
+        onChange={onNameChange}
+        placeholder="Name"
+      />
+      <input
+        className="w-full p-2 border border-gray-300 rounded mb-4"
+        type="text"
+        value={email}
+        onChange={onEmailChange}
+        placeholder="Username"
+      />
+      <input
+        className="w-full p-2 border border-gray-300 rounded mb-4"
+        type="password"
+        value={password}
+        onChange={onPasswordChange}
+        placeholder="Password"
+      />
+      <button
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="button"
+        onClick={() => register({ name, email, password })}
+      >
+        Daftar
+
+      </button>
     </form>
   );
 }

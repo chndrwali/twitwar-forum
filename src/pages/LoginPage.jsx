@@ -11,11 +11,11 @@ function LoginPage() {
   };
 
   return (
-    <section className="bg-black flex items-center justify-center min-h-screen">
-      <article className="bg-gray-200 rounded-lg flex flex-col items-center justify-center">
+    <section className="bg-black flex items-center justify-center">
+      <article className="bg-gray-200 rounded-lg flex flex-col items-center justify-center min-h-screen">
         <div>
           <img
-            src="./public/vite.svg"
+            src="./public/twitwar.svg"
             alt="Twitwar"
             className="xs:mt-5 w-10 h-10 mb-5"
           />
