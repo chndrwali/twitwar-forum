@@ -17,8 +17,8 @@ function LeaderboardsPage() {
   }));
 
   return (
-    <div className="leaderboard-page">
-      <h2>Top User</h2>
+    <div className="w-4/5 m-auto pt-10 shadow-xl">
+      <h2 className="grid grid-cols-3 grid-rows-1 py-8 text-start text-lg bg-white px-8 sm:px-16 md:px-32 font-bold">Top User</h2>
       <LeaderboardList leaderboardList={leaderboardList} />
     </div>
   );

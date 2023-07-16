@@ -1,3 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.loading {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}

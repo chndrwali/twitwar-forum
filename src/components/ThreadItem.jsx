@@ -17,9 +17,9 @@ function ThreadItem({
   downVotesBy,
 }) {
   return (
-    <div className="thread-item">
+    <div className="bg-white p-6 shadow-xl mt-6 rounded-lg">
       <ThreadItemHeader user={(user === undefined) ? '' : user} id={id} title={title} category={category} />
-      <div className="thread-item__body">{parse(body)}</div>
+      <div className="leading-5 max-h-20 overflow-hidden mt-6">{parse(body)}</div>
       <ThreadItemFooter
         createdAt={createdAt}
         totalComments={totalComments}

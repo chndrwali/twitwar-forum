@@ -8,9 +8,9 @@ function ThreadItemHeader({
 }) {
   const { name, avatar } = user;
   return (
-    <header className="thread-item_header">
+    <header className="flex items-center">
       <div className="thread-owner_info">
-        <img src={avatar} alt="avatar" />
+        <img className="rounded-full w-12" src={avatar} alt="avatar" />
         <b>
           <p>
             {name}

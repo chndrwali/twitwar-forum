@@ -7,7 +7,7 @@ function ThreadDetailHeader({ detail }) {
   const { name, avatar } = detail.owner;
   const { title, category, createdAt } = detail;
   return (
-    <header className="thread-header">
+    <header className="bg-red-800">
       <div className="thread-owner_info">
         <img src={avatar} alt="avatar" />
         <b>

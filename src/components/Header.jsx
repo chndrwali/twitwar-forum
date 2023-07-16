@@ -5,9 +5,14 @@ function Header({ authUser }) {
   const { id, avatar, name } = authUser;
 
   return (
-    <div className="header-home">
-      <img src={avatar} alt={id} title={name} />
-      <p>
+    <div className="flex items-center bg-black">
+      <img
+        className="rounded-full w-15 mt-2 mb-8"
+        src={avatar}
+        alt={id}
+        title={name}
+      />
+      <p className="font-outfit font-bold text-white text-2xl ml-2">
         Welcome,
         {' '}
         {name}

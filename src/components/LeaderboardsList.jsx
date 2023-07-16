@@ -6,7 +6,7 @@ import LeaderboardTitle from './LeaderboardsTitle';
 
 function LeaderboardList({ leaderboardList }) {
   return (
-    <div className="leaderboards-list">
+    <div className="bg-gray-100 p-4">
       <LeaderboardTitle />
       {leaderboardList.map((leaderboard) => (
         <LeaderboardItem key={leaderboard.user.id} {...leaderboard} />

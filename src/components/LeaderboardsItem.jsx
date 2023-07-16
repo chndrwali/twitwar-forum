@@ -6,12 +6,12 @@ function LeaderboardItem({ user, score }) {
   const { name, avatar } = user;
 
   return (
-    <div className="leaderboard-item">
-      <div className="leaderboard-item_user-info">
-        <img src={avatar} alt="avatar" />
-        <p>{name}</p>
+    <div className="flex items-center justify-between rounded-md mb-2">
+      <div className="flex items-center mb-4">
+        <img className="rounded-full w-16 mr-6" src={avatar} alt="avatar" />
+        <p className="text-lg font-semibold">{name}</p>
       </div>
-      <p className="leaderboard-item_score">{score}</p>
+      <p className="text-2xl font-bold">{score}</p>
     </div>
   );
 }

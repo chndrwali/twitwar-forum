@@ -27,7 +27,7 @@ function HomePage() {
 
   const filteredThreads = threadList.filter((thread) => thread.category === category);
   return (
-    <section className="home-page">
+    <section className="w-4/5 m-auto shadow-xl mt-14 mb-12 bg-zinc-100">
       <CategoryList onCategoryChange={onCategoryChange} />
       {
         category === '' || category === ' '
