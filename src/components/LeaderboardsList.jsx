@@ -11,7 +11,6 @@ function LeaderboardList({ leaderboardList }) {
       {leaderboardList.map((leaderboard) => (
         <LeaderboardItem key={leaderboard.user.id} {...leaderboard} />
       ))}
-
     </div>
   );
 }

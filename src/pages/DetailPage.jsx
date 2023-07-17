@@ -20,7 +20,7 @@ function DetailPage() {
   if (!threadDetail) return null;
 
   return (
-    <section className="detail-page">
+    <section className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm my-6">
       <ThreadDetailHeader detail={threadDetail} />
       <ThreadDetailContent detail={threadDetail} />
       <ThreadDetailFooter detail={threadDetail} />

@@ -5,7 +5,7 @@ import { threadProp } from '../utils/propHelper';
 
 function ThreadsList({ threadList }) {
   return (
-    <div className="w-full flex items-center gap-7 mt-3.5 pb-5 overflow-x-auto">
+    <div className="w-full flex items-center">
       {threadList.map((thread, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <ThreadItem key={index} {...thread} />

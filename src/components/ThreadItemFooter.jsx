@@ -24,14 +24,18 @@ function ThreadItemFooter({
   };
 
   return (
-    <footer className="flex items-center justify-between mt-3 text-gray-500">
-      <ActionButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
-      <ActionButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
-      <p className="flex items-center gap-1">
-        <MdComment className="mr-1" />
-        {totalComments}
-      </p>
-      <p className="text-xs">{postedAt(createdAt)}</p>
+    <footer className="flex items-center justify-between mt-4">
+      <div className="flex items-center space-x-4">
+        <ActionButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
+        <ActionButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
+        <div className="flex items-center space-x-1">
+          <MdComment className="text-gray-500 text-lg" />
+          <p className="text-sm text-gray-500">
+            {totalComments}
+          </p>
+        </div>
+      </div>
+      <p className="text-xs text-gray-500">{postedAt(createdAt)}</p>
     </footer>
   );
 }

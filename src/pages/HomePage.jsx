@@ -27,14 +27,15 @@ function HomePage() {
 
   const filteredThreads = threadList.filter((thread) => thread.category === category);
   return (
-    <section className="w-4/5 m-auto shadow-xl mt-14 mb-12 bg-black-100">
+    <section className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm my-6">
       <CategoryList onCategoryChange={onCategoryChange} />
-      {
-        category === '' || category === ' '
-          ? <ThreadList className="rounded-md text-sm" threadList={threadList} />
-          : <ThreadList className="rounded-md text-sm" threadList={filteredThreads} />
-      }
+      {category === '' || category === ' ' ? (
+        <ThreadList className="rounded-md text-sm" threadList={threadList} />
+      ) : (
+        <ThreadList className="rounded-md text-sm" threadList={filteredThreads} />
+      )}
     </section>
+
   );
 }
 

@@ -6,6 +6,7 @@ function LeaderboardTitle() {
       <p className="text-lg flex-1">User</p>
       <p className="text-right font-bold text-gray-600">Score</p>
     </header>
+
   );
 }
 

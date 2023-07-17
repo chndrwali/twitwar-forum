@@ -8,21 +8,19 @@ function ThreadItemHeader({
 }) {
   const { name, avatar } = user;
   return (
-    <header className="flex items-center">
-      <div className="bg-slate-100">
-        <img className="rounded-full w-12" src={avatar} alt="avatar" />
-        <b>
-          <p>
-            {name}
-            {' '}
-            :
-          </p>
-        </b>
+    <header className="flex items-center py-4 px-6 border-b border-gray-200">
+      <div className="flex items-center">
+        <img className="w-12 h-12 rounded-full" src={avatar} alt="avatar" />
+        <div className="ml-3">
+          <p className="font-bold">{name}</p>
+          <Link to={`/thread/${id}`} className="text-gray-600 text-sm">{title}</Link>
+        </div>
       </div>
-      <Link to={`/thread/${id}`}><h4 className="text-center font-semibold">{title}</h4></Link>
-      <span className="rounded-sm">
-        {`#${category}`}
-      </span>
+      <div className="flex items-center ml-auto space-x-2">
+        <span className="rounded-full bg-blue-500 text-white text-xs px-3 py-1">
+          {`#${category}`}
+        </span>
+      </div>
     </header>
   );
 }

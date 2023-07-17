@@ -18,9 +18,18 @@ function CommentInput({ threadId }) {
 
   return (
     <form className="flex gap-2">
-      <div className=" bg-white p-2 rounded-md shadow-md flex-grow" contentEditable onInput={onChange} data-testid="comment-input_field" />
+      <div className="bg-white p-2 rounded-md shadow-md flex-grow">
+        <input
+          type="text"
+          placeholder="Add comment"
+          className="w-full border-none focus:ring-0"
+          onChange={onChange}
+          data-testid="comment-input_field"
+        />
+      </div>
       <button type="button" className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md" onClick={() => onAddComment()}>Send</button>
     </form>
+
   );
 }
 

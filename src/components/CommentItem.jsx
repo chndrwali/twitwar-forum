@@ -21,14 +21,17 @@ function CommentItem({
   };
 
   return (
-    <div className=" bg-white p-4 rounded-md shadow-md">
+    <div className="bg-white p-4 rounded-md shadow-md">
       <header className="flex items-center mb-2">
         <div className="flex items-center gap-2">
           <img className="w-8 h-8 rounded-full" src={`${owner.avatar}`} alt="avatar" />
-          <b><p>{owner.name}</p></b>
+          <div>
+            <b><p className="text-sm">{owner.name}</p></b>
+            <p className="text-xs text-gray-500">{postedAt(createdAt)}</p>
+          </div>
         </div>
       </header>
-      <p>{content}</p>
+      <p className="text-sm">{content}</p>
       <footer className="flex items-center justify-between mt-2">
         <ActionButton
           authUser={authUser}
@@ -42,7 +45,6 @@ function CommentItem({
           count={downVotesBy.length}
           onButtonClicked={onDownComment}
         />
-        <p className="text-xs text-gray-500">{postedAt(createdAt)}</p>
       </footer>
     </div>
   );
