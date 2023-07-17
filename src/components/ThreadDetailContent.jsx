@@ -6,7 +6,7 @@ import { detailProp } from '../utils/propHelper';
 function ThreadDetailContent({ detail }) {
   const { body } = detail;
   return (
-    <div className="thread-content_body">
+    <div className=" bg-white p-6 shadow-xl rounded-lg">
       {parse(body)}
     </div>
   );

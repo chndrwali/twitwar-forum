@@ -24,14 +24,14 @@ function ThreadItemFooter({
   };
 
   return (
-    <footer className="thread-item_footer">
+    <footer className="flex items-center justify-between mt-3 text-gray-500">
       <ActionButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
       <ActionButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
-      <p className="thread-item_comment">
-        <MdComment />
+      <p className="flex items-center gap-1">
+        <MdComment className="mr-1" />
         {totalComments}
       </p>
-      <p>{postedAt(createdAt)}</p>
+      <p className="text-xs">{postedAt(createdAt)}</p>
     </footer>
   );
 }

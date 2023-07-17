@@ -5,15 +5,10 @@ import { commentProp } from '../utils/propHelper';
 
 function CommentList({ comments }) {
   return (
-    <div className="comments-list">
-      {
-        comments.map((comment) => (
-          <CommentItem
-            key={comment.id}
-            {...comment}
-          />
-        ))
-      }
+    <div className=" space-y-4">
+      {comments.map((comment) => (
+        <CommentItem key={comment.id} {...comment} />
+      ))}
     </div>
   );
 }

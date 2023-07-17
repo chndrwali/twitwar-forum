@@ -5,15 +5,15 @@ function Header({ authUser }) {
   const { id, avatar, name } = authUser;
 
   return (
-    <div className="flex items-center bg-black">
+    <div className="flex flex-col items-center bg-black">
       <img
-        className="rounded-full w-15 mt-2 mb-8"
+        className="rounded-full w-15 mt-4 mb-4"
         src={avatar}
         alt={id}
         title={name}
       />
-      <p className="font-outfit font-bold text-white text-2xl ml-2">
-        Welcome,
+      <p className="font-outfit font-bold text-white text-2xl mb-4">
+        Selamat datang di twitwar,
         {' '}
         {name}
       </p>

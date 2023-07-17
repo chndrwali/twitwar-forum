@@ -9,7 +9,7 @@ function ThreadItemHeader({
   const { name, avatar } = user;
   return (
     <header className="flex items-center">
-      <div className="thread-owner_info">
+      <div className="bg-slate-100">
         <img className="rounded-full w-12" src={avatar} alt="avatar" />
         <b>
           <p>
@@ -17,20 +17,21 @@ function ThreadItemHeader({
             {' '}
             :
           </p>
-
         </b>
       </div>
-      <Link to={`/thread/${id}`}><h4 className="thread-item_title">{title}</h4></Link>
-      <span className="thread-item_category">
+      <Link to={`/thread/${id}`}><h4 className="text-center font-semibold">{title}</h4></Link>
+      <span className="rounded-sm">
         {`#${category}`}
       </span>
     </header>
   );
 }
+
 ThreadItemHeader.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   user: PropTypes.shape(userProp).isRequired,
 };
+
 export default ThreadItemHeader;

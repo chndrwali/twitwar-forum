@@ -4,26 +4,24 @@ import PropTypes from 'prop-types';
 function CategoryItem({
   category, onSelect, unSelect, selected,
 }) {
+  const handleClick = () => {
+    if (category === selected) {
+      unSelect();
+    } else {
+      onSelect(category);
+    }
+  };
+
   return (
-    (category === selected ? (
-      <button
-        type="button"
-        className="category-item_selected"
-        onClick={unSelect}
-        value={category}
-      >
-        {`#${category}`}
-      </button>
-    ) : (
-      <button
-        type="button"
-        className="category-item"
-        onClick={onSelect}
-        value={category}
-      >
-        {`#${category}`}
-      </button>
-    )));
+    <button
+      type="button"
+      className={`py-2 px-4 rounded-md ${category === selected ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+      onClick={handleClick}
+      value={category}
+    >
+      {`#${category}`}
+    </button>
+  );
 }
 
 CategoryItem.propTypes = {

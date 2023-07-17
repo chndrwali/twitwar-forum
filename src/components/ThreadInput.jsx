@@ -15,23 +15,23 @@ function ThreadInput({ onCreate }) {
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
       <h2 className="text-center text-lg font-medium sm:text-2xl">Buat Utas Baru</h2>
-      <form className="mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border-t-4 border-white">
+      <form className="mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border-t-8 border-black">
         <input
-          className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
           type="text"
           placeholder="Title"
           value={title}
           onChange={onTitleChange}
         />
         <input
-          className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
           type="text"
           placeholder="Category"
           value={category}
           onChange={onCategoryChange}
         />
         <textarea
-          className="bg-white w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
           onInput={onChange}
           data-testid="input-body"
         />

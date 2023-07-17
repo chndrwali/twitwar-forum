@@ -49,7 +49,7 @@ function App() {
 
   return (
 
-    <div className="">
+    <div className="bg-slate-200">
       <header>
         <Header authUser={authUser} />
         <Loading />

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ThreadsList from '../components/ThreadList';
+import ThreadList from '../components/ThreadList';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
 import useInput from '../hooks/useInput';
 import CategoryList from '../components/CategoryList';
@@ -27,12 +27,12 @@ function HomePage() {
 
   const filteredThreads = threadList.filter((thread) => thread.category === category);
   return (
-    <section className="w-4/5 m-auto shadow-xl mt-14 mb-12 bg-zinc-100">
+    <section className="w-4/5 m-auto shadow-xl mt-14 mb-12 bg-black-100">
       <CategoryList onCategoryChange={onCategoryChange} />
       {
         category === '' || category === ' '
-          ? <ThreadsList className="thread-list" threadList={threadList} />
-          : <ThreadsList className="thread-list" threadList={filteredThreads} />
+          ? <ThreadList className="rounded-md text-sm" threadList={threadList} />
+          : <ThreadList className="rounded-md text-sm" threadList={filteredThreads} />
       }
     </section>
   );

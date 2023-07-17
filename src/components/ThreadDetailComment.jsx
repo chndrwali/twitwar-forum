@@ -7,13 +7,13 @@ import { detailProp } from '../utils/propHelper';
 function ThreadDetailComment({ detail }) {
   const { comments } = detail;
   return (
-    <div className="thread-comment">
-      <div className="thread-comment_input">
-        <h3>Add comment</h3>
+    <div className="mt-6">
+      <div className="mb-6">
+        <h3 className="text-xl font-bold">Add comment</h3>
         <CommentInput threadId={detail.id} />
       </div>
-      <div className="thread-comment_list">
-        <h3>{`Comments (${comments.length})`}</h3>
+      <div className="">
+        <h3 className="text-xl font-bold">{`Comments (${comments.length})`}</h3>
         <CommentList comments={comments} />
       </div>
     </div>

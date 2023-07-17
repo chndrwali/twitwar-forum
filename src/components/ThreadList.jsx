@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import ThreadItem from './ThreadItem';
 import { threadProp } from '../utils/propHelper';

@@ -5,12 +5,8 @@ import ActionButton from './ActionButton';
 import { detailProp } from '../utils/propHelper';
 import { asyncToggleDownVoteThreadDetail, asyncToogleUpVoteThreadDetail } from '../states/threadDetail/action';
 
-function ThreadDetailFooter({
-  detail,
-}) {
-  const {
-    upVotesBy, downVotesBy,
-  } = detail;
+function ThreadDetailFooter({ detail }) {
+  const { upVotesBy, downVotesBy } = detail;
 
   const dispatch = useDispatch();
 
@@ -23,17 +19,9 @@ function ThreadDetailFooter({
   };
 
   return (
-    <footer className="thread-detail_footer">
-      <ActionButton
-        type="up"
-        count={upVotesBy.length}
-        onButtonClicked={onUpvoteThread}
-      />
-      <ActionButton
-        type="down"
-        count={downVotesBy.length}
-        onButtonClicked={onDownVoteThread}
-      />
+    <footer className="flex items-center justify-between">
+      <ActionButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
+      <ActionButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
     </footer>
   );
 }

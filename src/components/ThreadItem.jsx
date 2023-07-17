@@ -18,7 +18,7 @@ function ThreadItem({
 }) {
   return (
     <div className="bg-white p-6 shadow-xl mt-6 rounded-lg">
-      <ThreadItemHeader user={(user === undefined) ? '' : user} id={id} title={title} category={category} />
+      <ThreadItemHeader user={user} id={id} title={title} category={category} />
       <div className="leading-5 max-h-20 overflow-hidden mt-6">{parse(body)}</div>
       <ThreadItemFooter
         createdAt={createdAt}
@@ -28,7 +28,6 @@ function ThreadItem({
         id={id}
       />
     </div>
-
   );
 }
 
@@ -41,7 +40,11 @@ ThreadItem.propTypes = {
   upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
   downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
   totalComments: PropTypes.number.isRequired,
-  user: PropTypes.shape(userProp).isRequired,
+  user: PropTypes.shape(userProp),
+};
+
+ThreadItem.defaultProps = {
+  user: {},
 };
 
 export default ThreadItem;
