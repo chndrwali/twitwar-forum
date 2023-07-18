@@ -27,11 +27,11 @@ function HomePage() {
 
   const filteredThreads = threadList.filter((thread) => thread.category === category);
   return (
-    <div className="w-full md:w-4/5 mx-auto shadow-xl mt-14 mb-12 bg-red-300">
+    <div className="container mx-auto">
       <main>
-        <section className="pt-4 px-4 md:px-16">
-          <CategoryList className="w-full flex items-center mt-3.5 pb-5 overflow-x-auto" onCategoryChange={onCategoryChange} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <section className="flex flex-col items-center">
+          <CategoryList onCategoryChange={onCategoryChange} />
+          <div className="w-full">
             {category === '' || category === ' ' ? (
               <ThreadList threadList={threadList} />
             ) : (

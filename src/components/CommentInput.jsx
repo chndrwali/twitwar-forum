@@ -17,17 +17,18 @@ function CommentInput({ threadId }) {
   };
 
   return (
-    <form className="flex gap-2">
-      <div className="bg-white p-2 rounded-md shadow-md flex-grow">
+    <form className="mt-4">
+      <div className="flex items-center gap-2">
+        <img className="w-10 h-10 rounded-full" src="../../public/twitwar.svg" alt="avatar" />
         <input
           type="text"
-          placeholder="Add comment"
-          className="w-full border-none focus:ring-0"
+          placeholder="Tambahkan komentar..."
+          className="flex-grow py-2 px-4 rounded-full bg-gray-200 border-gray-200 text-sm shadow-sm"
           onChange={onChange}
           data-testid="comment-input_field"
         />
       </div>
-      <button type="button" className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md" onClick={() => onAddComment()}>Send</button>
+      <button type="button" className="mt-2 py-2 px-4 rounded-full bg-blue-500 text-white text-sm font-medium" onClick={() => onAddComment()}>Send</button>
     </form>
 
   );

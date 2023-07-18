@@ -21,6 +21,7 @@ function CategoryItem({
     >
       {`#${category}`}
     </button>
+
   );
 }
 

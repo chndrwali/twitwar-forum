@@ -21,34 +21,23 @@ function CommentItem({
   };
 
   return (
-    <div className="bg-white p-4 rounded-md shadow-md">
-      <header className="flex items-center mb-2">
-        <div className="flex items-center gap-2">
-          <img className="w-8 h-8 rounded-full" src={`${owner.avatar}`} alt="avatar" />
-          <div>
-            <b><p className="text-sm">{owner.name}</p></b>
-            <p className="text-xs text-gray-500">{postedAt(createdAt)}</p>
-          </div>
+    <div className="mt-4">
+      <header className="flex items-center gap-2">
+        <img className="w-10 h-10 rounded-full" src={`${owner.avatar}`} alt="avatar" />
+        <div>
+          <p className="font-semibold text-lg">{owner.name}</p>
+          <p className="text-gray-500 text-sm">{postedAt(createdAt)}</p>
         </div>
       </header>
-      <p className="text-sm">{content}</p>
-      <footer className="flex items-center justify-between mt-2">
-        <div className="flex items-center">
-          <ActionButton
-            authUser={authUser}
-            type="up"
-            onButtonClicked={onUpComment}
-            count={upVotesBy.length}
-          />
-          <ActionButton
-            authUser={authUser}
-            type="down"
-            count={downVotesBy.length}
-            onButtonClicked={onDownComment}
-          />
+      <p className="mt-2">{content}</p>
+      <footer className="flex justify-start items-center mt-2">
+        <div className="flex gap-2">
+          <ActionButton authUser={authUser} type="up" onButtonClicked={onUpComment} count={upVotesBy.length} />
+          <ActionButton authUser={authUser} type="down" count={downVotesBy.length} onButtonClicked={onDownComment} />
         </div>
       </footer>
     </div>
+
   );
 }
 

@@ -17,9 +17,9 @@ function ThreadItem({
   downVotesBy,
 }) {
   return (
-    <section className="bg-white p-4 mt-4 border border-gray-200 rounded-lg mb-4">
+    <section className="my-4">
       <ThreadItemHeader user={user} id={id} title={title} category={category} />
-      <div className="mt-2">{parse(body)}</div>
+      <div className="">{parse(body)}</div>
       <ThreadItemFooter
         createdAt={createdAt}
         totalComments={totalComments}

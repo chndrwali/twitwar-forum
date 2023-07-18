@@ -7,3 +7,35 @@
   width: 100%;
   z-index: 10;
 }
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #cbd5e0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.switch input[type='checkbox'] {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.switch input[type='checkbox']:checked + .slider {
+  transform: translateX(1.5rem);
+}

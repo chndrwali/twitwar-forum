@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThreadItem from './ThreadItem';
@@ -5,12 +6,12 @@ import { threadProp } from '../utils/propHelper';
 
 function ThreadsList({ threadList }) {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full">
       {threadList.map((thread, index) => (
-        // eslint-disable-next-line react/no-array-index-key
         <ThreadItem key={index} {...thread} />
       ))}
     </div>
+
   );
 }
 
