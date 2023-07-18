@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import ActionButton from './ActionButton';
+import ActionButton from './VoteButton';
 import { detailProp } from '../utils/propHelper';
 import { asyncToggleDownVoteThreadDetail, asyncToogleUpVoteThreadDetail } from '../states/threadDetail/action';
 

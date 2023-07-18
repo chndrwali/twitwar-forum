@@ -20,15 +20,21 @@ function CommentInput({ threadId }) {
     <form className="mt-4">
       <div className="flex items-center gap-2">
         <img className="w-10 h-10 rounded-full" src="../../public/twitwar.svg" alt="avatar" />
-        <input
-          type="text"
-          placeholder="Tambahkan komentar..."
+        <div
           className="flex-grow py-2 px-4 rounded-full bg-gray-200 border-gray-200 text-sm shadow-sm"
-          onChange={onChange}
+          contentEditable
+          onInput={onChange}
           data-testid="comment-input_field"
         />
       </div>
-      <button type="button" className="mt-2 py-2 px-4 rounded-full bg-blue-500 text-white text-sm font-medium" onClick={() => onAddComment()}>Send</button>
+      <button
+        type="button"
+        className="mt-2 py-2 px-4 rounded-full bg-blue-500 text-white text-sm font-medium"
+        onClick={() => onAddComment()}
+      >
+        Send
+
+      </button>
     </form>
 
   );

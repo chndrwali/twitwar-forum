@@ -30,9 +30,10 @@ function ThreadInput({ onCreate }) {
           value={category}
           onChange={onCategoryChange}
         />
-        <textarea
+        <div
           className="bg-white w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
           onInput={onChange}
+          contentEditable
           placeholder="Apa yang kamu pikirkan anak muda?"
           data-testid="input-body"
         />

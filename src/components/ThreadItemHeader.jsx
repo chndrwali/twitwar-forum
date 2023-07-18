@@ -10,13 +10,13 @@ function ThreadItemHeader({
   return (
     <>
       <div className="flex items-center">
-        <img className="w-8 h-8 rounded-full mr-2" src={avatar} alt="avatar" />
+        <img className="w-12 h-12 rounded-full mr-4" src={avatar} alt="avatar" />
         <div className="">
           <p className="font-semibold">{name}</p>
           <Link to={`/thread/${id}`} className="text-blue-500">{title}</Link>
         </div>
       </div>
-      <div className="mt-2">
+      <div className="mt-1">
         <span className="text-gray-500 text-sm">
           {`#${category}`}
         </span>

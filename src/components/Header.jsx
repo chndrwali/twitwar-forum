@@ -11,19 +11,18 @@ function Header({ authUser }) {
   };
 
   return (
-    <div className={`flex flex-col items-center ${darkMode ? 'bg-black' : 'bg-white'}`}>
+    <div className={`flex items-center ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <img
-        className="rounded-full w-15 mt-4 mb-4"
+        className="rounded-full w-10 ml-4 mr-4 mt-4 mb-4"
         src={avatar}
         alt={id}
         title={name}
       />
-      <p className={`font-outfit font-bold ${darkMode ? 'text-white' : 'text-black'} text-2xl mb-4`}>
+      <p className={`font-outfit font-bold ${darkMode ? 'text-white' : 'text-black'} text-2xl `}>
         Selamat datang di twitwar,
-        {' '}
         {name}
       </p>
-      <label className="switch relative inline-flex items-center justify-center h-6 w-12 bg-gray-300 rounded-full">
+      <label className="switch ml-5 relative inline-flex items-center justify-center h-6 w-12 bg-gray-300 rounded-full">
         <input
           type="checkbox"
           className="hidden"

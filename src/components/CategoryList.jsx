@@ -31,8 +31,10 @@ function CategoryList({ onCategoryChange }) {
 
   return (
     <div className="container mx-auto">
-      <h1 className="font-medium text-lg text-zinc-400">Popular category</h1>
-      <div className="flex items-center gap-7 mt-3.5 pb-5 overflow-x-auto">
+      <h1 className="font-medium text-lg text-zinc-400">
+        Popular category
+      </h1>
+      <div className="flex items-center gap-3 mt-3 pb-5 overflow-x-auto">
         {uniqueCategoryThread.map((category, index) => (
           <CategoryItem
             key={index}

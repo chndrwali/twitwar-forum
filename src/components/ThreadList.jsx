@@ -6,7 +6,7 @@ import { threadProp } from '../utils/propHelper';
 
 function ThreadsList({ threadList }) {
   return (
-    <div className="w-full">
+    <div className="container mx-auto">
       {threadList.map((thread, index) => (
         <ThreadItem key={index} {...thread} />
       ))}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userProp } from '../utils/propHelper';
-import ActionButton from './ActionButton';
+import ActionButton from './VoteButton';
 import postedAt from '../utils/index';
 import { asyncToggleUpVoteComment, asyncToggleDownVoteComment } from '../states/threadDetail/action';
 
