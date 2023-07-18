@@ -10,7 +10,6 @@ function CommentList({ comments }) {
         <CommentItem key={comment.id} {...comment} />
       ))}
     </div>
-
   );
 }
 

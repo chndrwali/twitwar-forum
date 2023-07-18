@@ -17,7 +17,7 @@ function Navigation({ signout }) {
         <button
           type="button"
           className="text-center mt-3 border-2 text-black font-bold hover:border-gray-600 mb-2"
-          title="Threads"
+          title="Create"
         >
           <MdAddBox />
         </button>

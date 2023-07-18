@@ -1,15 +1,16 @@
-import React from 'react';
+/* eslint-disable react/no-danger */
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { asyncAddComment } from '../states/threadDetail/action';
 
 function CommentInput({ threadId }) {
-  const [content, setValue] = React.useState('');
+  const [content, setContent] = useState('');
   const dispatch = useDispatch();
 
   const onChange = (e) => {
     const html = e.target.innerHTML;
-    setValue(html);
+    setContent(html);
   };
 
   const onAddComment = () => {
@@ -25,18 +26,17 @@ function CommentInput({ threadId }) {
           contentEditable
           onInput={onChange}
           data-testid="comment-input_field"
+          dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
       <button
         type="button"
         className="mt-2 py-2 px-4 rounded-full bg-blue-500 text-white text-sm font-medium"
-        onClick={() => onAddComment()}
+        onClick={onAddComment}
       >
         Send
-
       </button>
     </form>
-
   );
 }
 

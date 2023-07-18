@@ -11,17 +11,16 @@ function CategoryItem({
       onSelect(category);
     }
   };
-  const buttonClassName = `py-2 px-4 rounded-md ${category === selected ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`;
-  return (
-    <button
-      type="button"
-      className={buttonClassName}
-      onClick={handleClick}
-      value={category}
-    >
-      {`#${category}`}
-    </button>
 
+  const buttonClassName = `py-2 px-4 rounded-md ${
+    category === selected ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
+  }`;
+
+  return (
+    <button type="button" className={buttonClassName} onClick={handleClick}>
+      #
+      {category}
+    </button>
   );
 }
 

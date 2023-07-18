@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,9 +34,9 @@ function CategoryList({ onCategoryChange }) {
         Popular category
       </h1>
       <div className="flex items-center gap-3 mt-3 pb-5 overflow-x-auto">
-        {uniqueCategoryThread.map((category, index) => (
+        {uniqueCategoryThread.map((category) => (
           <CategoryItem
-            key={index}
+            key={category}
             category={category}
             onSelect={onSelectCategory}
             unSelect={unSelectCategory}
@@ -46,7 +45,6 @@ function CategoryList({ onCategoryChange }) {
         ))}
       </div>
     </div>
-
   );
 }
 

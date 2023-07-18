@@ -20,6 +20,7 @@ function Header({ authUser }) {
       />
       <p className={`font-outfit font-bold ${darkMode ? 'text-white' : 'text-black'} text-2xl `}>
         Selamat datang di twitwar,
+        {' '}
         {name}
       </p>
       <label className="switch ml-5 relative inline-flex items-center justify-center h-6 w-12 bg-gray-300 rounded-full">
@@ -31,7 +32,6 @@ function Header({ authUser }) {
         />
         <span className="slider absolute rounded-full h-4 w-4 bg-white shadow-md transform transition-transform duration-300 ease-in-out" />
       </label>
-
     </div>
   );
 }

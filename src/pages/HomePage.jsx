@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreadList from '../components/ThreadList';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
-import useInput from '../hooks/useInput';
-import CategoryList from '../components/CategoryList';
+import Filter from '../components/Filter';
 
 function HomePage() {
   const {
@@ -11,8 +10,7 @@ function HomePage() {
     users = [],
     authUser,
   } = useSelector((states) => states);
-  const [category, onCategoryChange] = useInput('');
-
+  const [selectedCategory, setSelectedCategory] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,23 +23,31 @@ function HomePage() {
     authUser: authUser.id,
   }));
 
-  const filteredThreads = threadList.filter((thread) => thread.category === category);
+  const filteredThreads = selectedCategory
+    ? threadList.filter((thread) => thread.category === selectedCategory)
+    : threadList;
+
+  const categories = Array.from(new Set(threads.map((thread) => thread.category)));
+
+  const handleFilterChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   return (
     <div className="container mx-auto">
       <main>
         <section className="flex flex-col items-center">
-          <CategoryList onCategoryChange={onCategoryChange} />
+          <Filter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onChange={handleFilterChange}
+          />
           <div className="w-full">
-            {category === '' || category === ' ' ? (
-              <ThreadList threadList={threadList} />
-            ) : (
-              <ThreadList threadList={filteredThreads} />
-            )}
+            <ThreadList threadList={filteredThreads} />
           </div>
         </section>
       </main>
     </div>
-
   );
 }
 

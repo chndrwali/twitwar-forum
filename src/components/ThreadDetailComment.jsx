@@ -9,7 +9,7 @@ function ThreadDetailComment({ detail }) {
   return (
     <div className="mt-4">
       <div className="mb-4">
-        <h3 className="text-xl font-semibold">Add comment</h3>
+        <h3 className="text-xl font-semibold">Add Comment</h3>
         <CommentInput threadId={detail.id} />
       </div>
       <div>
@@ -17,7 +17,6 @@ function ThreadDetailComment({ detail }) {
         <CommentList comments={comments} />
       </div>
     </div>
-
   );
 }
 

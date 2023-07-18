@@ -12,12 +12,11 @@ function VoteButton({ type, count, onButtonClicked }) {
       {type === 'up' ? <MdThumbUp className="text-xl" /> : <MdThumbDown className="text-xl" />}
       <p className="text-sm">{count}</p>
     </button>
-
   );
 }
 
 VoteButton.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['up', 'down']).isRequired,
   count: PropTypes.number.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
 };

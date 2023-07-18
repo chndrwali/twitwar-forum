@@ -9,7 +9,7 @@ import { asyncToggleUpVoteComment, asyncToggleDownVoteComment } from '../states/
 function CommentItem({
   id, owner, createdAt, content, upVotesBy, downVotesBy,
 }) {
-  const { authUser } = useSelector((states) => states);
+  const { authUser } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const onUpComment = () => {
@@ -23,7 +23,7 @@ function CommentItem({
   return (
     <div className="mt-4">
       <header className="flex items-center gap-2">
-        <img className="w-10 h-10 rounded-full" src={`${owner.avatar}`} alt="avatar" />
+        <img className="w-10 h-10 rounded-full" src={owner.avatar} alt="avatar" />
         <div>
           <p className="font-semibold text-lg">{owner.name}</p>
           <p className="text-gray-500 text-sm">{postedAt(createdAt)}</p>
@@ -37,7 +37,6 @@ function CommentItem({
         </div>
       </footer>
     </div>
-
   );
 }
 

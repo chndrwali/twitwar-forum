@@ -6,6 +6,7 @@ import postedAt from '../utils/index';
 function ThreadDetailHeader({ detail }) {
   const { name, avatar } = detail.owner;
   const { title, category, createdAt } = detail;
+
   return (
     <header className="flex flex-col gap-1">
       <div className="flex items-center">
@@ -17,10 +18,10 @@ function ThreadDetailHeader({ detail }) {
       </div>
       <h2 className="text-xl font-semibold">{title}</h2>
       <span className="text-gray-500 text-sm">
-        {`#${category}`}
+        #
+        {category}
       </span>
     </header>
-
   );
 }
 
