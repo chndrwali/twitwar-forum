@@ -37,6 +37,7 @@ function ThreadItemFooter({
       </div>
       <p className="text-xs text-gray-500">{postedAt(createdAt)}</p>
     </footer>
+
   );
 }
 

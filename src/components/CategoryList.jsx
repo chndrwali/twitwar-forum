@@ -29,12 +29,12 @@ function CategoryList({ onCategoryChange }) {
   };
 
   return (
-    <header>
-      <p className="text-xl font-bold">Popular category</p>
-      <div className="flex flex-wrap mt-4 -mx-2">
+    <>
+      <h1 className="font-medium text-lg text-zinc-400">Popular category</h1>
+      <div className="w-full flex items-center gap-7 mt-3.5 pb-5 overflow-x-auto">
         {uniqueCategoryThread.map((category, index) => (
           <CategoryItem
-            // eslint-disable-next-line react/no-array-index-key
+          // eslint-disable-next-line react/no-array-index-key
             key={index}
             category={category}
             onSelect={onSelectCategory}
@@ -43,7 +43,8 @@ function CategoryList({ onCategoryChange }) {
           />
         ))}
       </div>
-    </header>
+
+    </>
   );
 }
 

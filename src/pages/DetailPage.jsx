@@ -20,12 +20,13 @@ function DetailPage() {
   if (!threadDetail) return null;
 
   return (
-    <section className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm my-6">
+    <section className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white shadow-sm my-6 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 mx-auto">
       <ThreadDetailHeader detail={threadDetail} />
       <ThreadDetailContent detail={threadDetail} />
       <ThreadDetailFooter detail={threadDetail} />
       <ThreadDetailComment detail={threadDetail} />
     </section>
+
   );
 }
 

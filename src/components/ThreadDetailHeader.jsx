@@ -7,23 +7,20 @@ function ThreadDetailHeader({ detail }) {
   const { name, avatar } = detail.owner;
   const { title, category, createdAt } = detail;
   return (
-    <header className="bg-slate-200">
+    <header className="bg-slate-200 p-4">
       <div className="flex items-center gap-2">
         <img className="h-16 w-16 object-cover rounded-full mr-4" src={avatar} alt="avatar" />
-        <b>
-          <p>
-            {name}
-          </p>
-        </b>
-        <p>{postedAt(createdAt)}</p>
+        <div>
+          <p className="font-bold">{name}</p>
+          <p className="text-gray-500">{postedAt(createdAt)}</p>
+        </div>
       </div>
-      <h2 className="text-xl font-bold">
-        {title}
-      </h2>
+      <h2 className="text-xl font-bold mt-4 mb-2">{title}</h2>
       <span className="rounded-sm bg-gray-200 text-gray-700 py-0.5 px-2 text-sm">
         {`#${category}`}
       </span>
     </header>
+
   );
 }
 

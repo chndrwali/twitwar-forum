@@ -33,18 +33,20 @@ function CommentItem({
       </header>
       <p className="text-sm">{content}</p>
       <footer className="flex items-center justify-between mt-2">
-        <ActionButton
-          authUser={authUser}
-          type="up"
-          onButtonClicked={onUpComment}
-          count={upVotesBy.length}
-        />
-        <ActionButton
-          authUser={authUser}
-          type="down"
-          count={downVotesBy.length}
-          onButtonClicked={onDownComment}
-        />
+        <div className="flex items-center">
+          <ActionButton
+            authUser={authUser}
+            type="up"
+            onButtonClicked={onUpComment}
+            count={upVotesBy.length}
+          />
+          <ActionButton
+            authUser={authUser}
+            type="down"
+            count={downVotesBy.length}
+            onButtonClicked={onDownComment}
+          />
+        </div>
       </footer>
     </div>
   );

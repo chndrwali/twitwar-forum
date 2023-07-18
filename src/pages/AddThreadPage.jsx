@@ -13,7 +13,10 @@ function CreateThreadPage() {
   };
 
   return (
-    <ThreadInput onCreate={onCreate} />
+    <div className="w-screen h-screen">
+      <ThreadInput onCreate={onCreate} />
+    </div>
+
   );
 }
 

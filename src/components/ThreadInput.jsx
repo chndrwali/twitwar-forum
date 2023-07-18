@@ -13,31 +13,31 @@ function ThreadInput({ onCreate }) {
   };
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-sm px-4 py-8 sm:px-6 lg:px-8">
       <h2 className="text-center text-lg font-medium sm:text-2xl">Buat Utas Baru</h2>
-      <form className="mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border-t-8 border-blue-500">
+      <form className="mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border-t-8 border-black">
         <input
-          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
           type="text"
           placeholder="Title"
           value={title}
           onChange={onTitleChange}
         />
         <input
-          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
           type="text"
           placeholder="Category"
           value={category}
           onChange={onCategoryChange}
         />
         <textarea
-          className="bg-gray-200 w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="bg-gray-200 w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
           onInput={onChange}
           placeholder="What's on your mind?"
           data-testid="input-body"
         />
         <button
-          className="block w-full rounded-lg bg-blue-500 hover:bg-blue-600 px-5 py-3 text-sm font-medium text-white"
+          className="block w-full rounded-lg bg-black hover:bg-slate-800 px-4 py-3 sm:px-5 sm:py-4 text-sm sm:text-base font-medium text-white"
           type="button"
           onClick={() => onCreate({ title, category, body })}
         >

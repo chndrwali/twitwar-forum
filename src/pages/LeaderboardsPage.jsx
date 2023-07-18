@@ -17,10 +17,11 @@ function LeaderboardsPage() {
   }));
 
   return (
-    <div className="w-4/5 mx-auto pt-10 shadow-xl">
-      <h2 className="grid grid-cols-3 grid-rows-1 py-8 text-start text-lg bg-white px-8 sm:px-16 md:px-32 font-bold">Top User</h2>
+    <div className="w-full sm:w-4/5 mx-auto pt-10 shadow-xl">
+      <h2 className="grid grid-cols-1 sm:grid-cols-3 py-8 text-start text-lg bg-white px-8 sm:px-16 md:px-32 font-bold">Top User</h2>
       <LeaderboardList leaderboardList={leaderboardList} />
     </div>
+
   );
 }
 

@@ -17,9 +17,9 @@ function ThreadItem({
   downVotesBy,
 }) {
   return (
-    <div className="bg-white p-4 mt-4 border border-gray-200 rounded-lg">
+    <section className="bg-white p-4 mt-4 border border-gray-200 rounded-lg mb-4">
       <ThreadItemHeader user={user} id={id} title={title} category={category} />
-      <div className="leading-5 max-h-20 overflow-hidden mt-4">{parse(body)}</div>
+      <div className="mt-2">{parse(body)}</div>
       <ThreadItemFooter
         createdAt={createdAt}
         totalComments={totalComments}
@@ -27,7 +27,8 @@ function ThreadItem({
         downVotesBy={downVotesBy}
         id={id}
       />
-    </div>
+    </section>
+
   );
 }
 

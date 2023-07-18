@@ -19,9 +19,11 @@ function ThreadDetailFooter({ detail }) {
   };
 
   return (
-    <footer className="flex items-center justify-between mt-4">
-      <ActionButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
-      <ActionButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
+    <footer className="flex items-center justify-between mt-4 p-4">
+      <div className="flex items-center">
+        <ActionButton type="up" className="mr-4" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
+        <ActionButton type="down" className="ml-4" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />
+      </div>
     </footer>
   );
 }
