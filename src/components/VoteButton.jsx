@@ -3,9 +3,21 @@ import { MdThumbDown, MdThumbUp } from 'react-icons/md';
 import PropTypes from 'prop-types';
 
 function VoteButton({ type, count, onButtonClicked }) {
+  const isVoted = count !== 0; // Check if the button has been voted
+
+  let buttonClassName = 'action-btn';
+  if (isVoted) {
+    buttonClassName += type === 'up' ? ' text-blue-500' : ' text-red-500';
+  } else {
+    buttonClassName += ' text-gray-500';
+  }
+  if (type === 'up') {
+    buttonClassName += ' liked';
+  }
+
   return (
     <button
-      className={`action-btn ${type === 'up' ? 'text-blue-500' : 'text-red-500'} ${type === 'up' ? 'liked' : ''} flex items-center gap-1`}
+      className={`${buttonClassName} flex items-center gap-1`}
       type="button"
       onClick={onButtonClicked}
     >

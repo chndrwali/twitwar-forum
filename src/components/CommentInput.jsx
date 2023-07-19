@@ -26,7 +26,6 @@ function CommentInput({ threadId }) {
           contentEditable
           onInput={onChange}
           data-testid="comment-input_field"
-          dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
       <button

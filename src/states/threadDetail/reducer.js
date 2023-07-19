@@ -36,7 +36,7 @@ function threadDetailReducer(threadDetail = null, action = {}) {
           ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
           : threadDetail.upVotesBy,
       };
-    case ActionType.ADD_COMMMENT:
+    case ActionType.ADD_COMMENT:
       return {
         ...threadDetail,
         comments: [
