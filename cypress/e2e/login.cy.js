@@ -8,7 +8,7 @@
  */
 describe('Login spec', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5173/');
+    cy.visit('http://localhost:3000/');
   });
   it('should display login page correctly', () => {
     // memverifikasi elemen yang harus tampak pada halaman login
