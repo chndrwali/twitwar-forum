@@ -9,7 +9,7 @@ function Filter({ categories, selectedCategory, onChange }) {
         value={selectedCategory}
         onChange={onChange}
       >
-        <option value="">#Trending</option>
+        <option value="">Trending</option>
         {categories.map((category) => (
           <option key={category} value={category}>
             #
