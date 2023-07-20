@@ -1,5 +1,5 @@
 /**
- * skenario test
+ * test scenario for thunk function :
  *
  * - asyncPopulateUsersAndThreads thunk
  *  - should dispatch action correctly when data fetching success

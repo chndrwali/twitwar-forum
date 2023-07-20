@@ -1,5 +1,5 @@
 /*
- Test Flow :
+ Test scenario fo leaderboardsReducer :
   * should return the initial state when given by unknown action
   * should return the threads when given by RECEIVE_LEADERBOARDS action
 */

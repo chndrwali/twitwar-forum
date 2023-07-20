@@ -18,7 +18,7 @@ function RegisterPage() {
       <main className="flex flex-col items-center justify-center px-4 py-8 sm:px-8 md:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
         <div>
           <img
-            src="./public/twitwar.svg"
+            src="./public/images/twitwar.svg"
             alt="Twitwar"
             className="mt-5 w-10 h-10 mb-5"
           />

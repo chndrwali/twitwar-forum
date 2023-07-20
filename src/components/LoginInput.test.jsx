@@ -1,8 +1,8 @@
 /**
- * skenario testing
+ * flow testing login component
  *
  * - LoginInput component
- *   - should handle username typing correctly
+ *   - should handle email typing correctly
  *   - should handle password typing correctly
  *   - should call login function when login button is clicked
  */

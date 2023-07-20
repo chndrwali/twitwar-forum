@@ -1,5 +1,5 @@
 /*
- Test Flow :
+ Test scenario for registerReducer :
   * should return the initial state when given by unknown action
   * should return when given by RECEIVE_USERS action
 */
