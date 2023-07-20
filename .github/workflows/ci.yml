@@ -7,15 +7,23 @@ on:
 
 jobs:
   automation-test-job:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }} # Define the matrix for operating systems
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest] # Run the workflow on both Ubuntu and macOS
+        node-version: [18.16.1] # Define the Node.js version here or add more versions if needed
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and test
+
+      - name: Install Dependencies and Run Tests
         run: |
-          npm install
+          npm ci
           npm run ci:test
