@@ -24,8 +24,8 @@ function Header({ authUser }) {
         {name}
       </p>
       <ul className="ml-auto flex items-center space-x-2 md:space-x-4">
-        <li className="text-sm md:text-base">Menu 1</li>
-        <li className="text-sm md:text-base">Menu 2</li>
+        <li className="text-sm md:text-base">Home</li>
+        <li className="text-sm md:text-base">About Me</li>
         {/* Add more menu items as needed */}
       </ul>
       <label className="switch ml-4 md:ml-6 relative inline-flex items-center justify-center h-6 w-12 bg-gray-300 rounded-full">
