@@ -4,26 +4,26 @@ import { userProp } from '../utils/propHelper';
 
 function LeaderboardList({ leaderboardList }) {
   return (
-    <div className="bg-gray-100 p-4">
-      <header className="flex items-center bg-white my-7 rounded-md shadow-lg px-6 py-3">
-        <p className="text-lg flex-1">User</p>
-        <p className="text-right font-bold text-gray-600">Score</p>
+    <div className="w-full">
+      <header className="flex items-center justify-between bg-gray-200 px-4 py-2">
+        <p className="text-lg font-semibold">User</p>
+        <p className="text-lg font-semibold">Score</p>
       </header>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="divide-y divide-gray-200">
         {leaderboardList.map((leaderboard) => (
           <div
             key={leaderboard.user.id}
-            className="flex items-center justify-between rounded-md mb-2 p-4"
+            className="flex items-center justify-between bg-white px-4 py-2"
           >
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
               <img
-                className="rounded-full w-16 h-16 mr-6"
+                className="w-10 h-10 rounded-full"
                 src={leaderboard.user.avatar}
                 alt="avatar"
               />
-              <p className="text-lg font-semibold">{leaderboard.user.name}</p>
+              <p className="text-base">{leaderboard.user.name}</p>
             </div>
-            <p className="text-2xl font-bold">{leaderboard.score}</p>
+            <p className="text-base">{leaderboard.score}</p>
           </div>
         ))}
       </div>

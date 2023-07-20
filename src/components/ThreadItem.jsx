@@ -32,21 +32,22 @@ function ThreadItem({
   };
 
   return (
-    <section className="my-4">
-      <div className="flex items-center">
+    <section className="bg-white rounded-lg shadow-md p-4 mb-4">
+      <div className="flex items-center mb-2">
         <img className="w-12 h-12 rounded-full mr-4" src={avatar} alt="avatar" />
         <div className="">
           <p className="font-semibold">{name}</p>
           <Link to={`/thread/${id}`} className="text-blue-500">{title}</Link>
         </div>
       </div>
-      <div className="mt-1">
-        <span className="text-gray-500 text-sm">
-          {`#${category}`}
+      <div className="mb-2">
+        <span className="text-white bg-blue-500 px-2 py-1 rounded-full hover:bg-blue-600 cursor-pointer">
+          #
+          {category}
         </span>
       </div>
-      <div className="">{parse(body)}</div>
-      <footer className="flex items-center justify-between mt-4">
+      <div className="mb-4">{parse(body)}</div>
+      <footer className="flex items-center justify-between">
         <div className="flex items-center">
           <VoteButton type="up" count={upVotesBy.length} onButtonClicked={onUpvoteThread} />
           <VoteButton type="down" count={downVotesBy.length} onButtonClicked={onDownVoteThread} />

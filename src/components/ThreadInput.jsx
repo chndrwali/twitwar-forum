@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 import useInput from '../hooks/useInput';
@@ -13,32 +14,47 @@ function ThreadInput({ onCreate }) {
   };
 
   return (
-    <div className="mx-auto max-w-screen-sm px-4 py-8 sm:px-6 lg:px-8">
-      <h2 className="text-center text-lg font-medium sm:text-2xl">Buat Utas Baru</h2>
-      <form className="mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 border-t-8 border-black">
-        <input
-          className="bg-white w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
-          type="text"
-          placeholder="Masukan judul..."
-          value={title}
-          onChange={onTitleChange}
-        />
-        <input
-          className="bg-white w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
-          type="text"
-          placeholder="Masukan category..."
-          value={category}
-          onChange={onCategoryChange}
-        />
-        <div
-          className="bg-white w-full rounded-lg border-gray-200 p-3 sm:p-4 text-sm sm:text-base shadow-sm"
-          onInput={onChange}
-          contentEditable
-          placeholder="Apa yang kamu pikirkan anak muda?"
-          data-testid="input-body"
-        />
+    <div className="bg-white shadow-md rounded-md p-8">
+      <h2 className="text-2xl font-bold mb-4">Buat Utas Baru</h2>
+      <form className="space-y-4">
+        <div>
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="title">
+            Judul
+          </label>
+          <input
+            className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:border-blue-500"
+            type="text"
+            id="title"
+            placeholder="Masukkan judul..."
+            value={title}
+            onChange={onTitleChange}
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="category">
+            Kategori
+          </label>
+          <input
+            className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:border-blue-500"
+            type="text"
+            id="category"
+            placeholder="Masukkan kategori..."
+            value={category}
+            onChange={onCategoryChange}
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 font-bold mb-2">Pikiranmu</label>
+          <div
+            className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:border-blue-500"
+            onInput={onChange}
+            contentEditable
+            placeholder="Apa yang kamu pikirkan, anak muda?"
+            data-testid="input-body"
+          />
+        </div>
         <button
-          className="block w-full rounded-lg bg-black hover:bg-slate-800 px-4 py-3 sm:px-5 sm:py-4 text-sm sm:text-base font-medium text-white"
+          className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-500"
           type="button"
           onClick={() => onCreate({ title, category, body })}
         >

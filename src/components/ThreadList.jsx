@@ -11,7 +11,6 @@ function ThreadsList({ threadList }) {
         <ThreadItem key={index} {...thread} />
       ))}
     </div>
-
   );
 }
 

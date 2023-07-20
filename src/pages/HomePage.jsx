@@ -34,15 +34,15 @@ function HomePage() {
   };
 
   return (
-    <div className="container mx-auto">
-      <main>
-        <section className="flex flex-col items-center">
+    <div className="bg-gray-100 min-h-screen py-8">
+      <main className="max-w-3xl mx-auto">
+        <section className="bg-white p-4 shadow-md rounded-lg">
           <Filter
             categories={categories}
             selectedCategory={selectedCategory}
             onChange={handleFilterChange}
           />
-          <div className="w-full">
+          <div className="mt-4">
             <ThreadList threadList={filteredThreads} />
           </div>
         </section>

@@ -17,8 +17,12 @@ function DetailPage() {
   if (!threadDetail) return null;
 
   return (
-    <section className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white shadow-sm my-6 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 mx-auto">
-      <ThreadDetail detail={threadDetail} />
+    <section className="bg-gray-100 min-h-screen py-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="bg-white p-4 shadow-md rounded-lg">
+          <ThreadDetail detail={threadDetail} />
+        </div>
+      </div>
     </section>
 
   );

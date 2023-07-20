@@ -33,7 +33,7 @@ function CommentInput({ threadId }) {
         className="mt-2 py-2 px-4 rounded-full bg-blue-500 text-white text-sm font-medium"
         onClick={onAddComment}
       >
-        Send
+        Kirim
       </button>
     </form>
   );

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { asyncAddThread } from '../states/thread/action';
 import ThreadInput from '../components/ThreadInput';
 
-function CreateThreadPage() {
+function AddThreadPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onCreate = ({ title, body, category }) => {
@@ -13,11 +13,13 @@ function CreateThreadPage() {
   };
 
   return (
-    <div className="w-screen h-screen">
-      <ThreadInput onCreate={onCreate} />
+    <div className="flex items-center justify-center h-screen bg-blue-50">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+        <ThreadInput onCreate={onCreate} />
+      </div>
     </div>
 
   );
 }
 
-export default CreateThreadPage;
+export default AddThreadPage;
