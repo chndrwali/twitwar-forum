@@ -24,7 +24,7 @@ function Header({ authUser }) {
         {name}
       </p>
       <ul className="ml-auto flex items-center space-x-2 md:space-x-4">
-        <li className="text-sm md:text-base">Menu 1</li>
+        <li className="text-sm md:text-base">Home</li>
         <li className="text-sm md:text-base">About Me</li>
         {/* Add more menu items as needed */}
       </ul>
