@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: ubuntu-latest # Run the workflow on both Ubuntu and macOS
+        os: [ubuntu-latest] # Run the workflow on both Ubuntu and macOS
         node-version: [18.16.1] # Define the Node.js version here or add more versions if needed
 
     steps:
