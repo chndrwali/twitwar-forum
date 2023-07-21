@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import Filter from '../components/Filter';
 
@@ -7,10 +8,12 @@ export default {
 };
 
 // Cerita untuk komponen "Filter" dengan kategori Tech terpilih
-export const Default = () => (
-  <Filter
-    categories={['Tech', 'Science', 'Health', 'Sports']}
-    selectedCategory="Tech"
-    onChange={(e) => console.log(e.target.value)}
-  />
-);
+export function Default() {
+  return (
+    <Filter
+      categories={['Tech', 'Science', 'Health', 'Sports']}
+      selectedCategory="Tech"
+      onChange={(e) => console.log(e.target.value)}
+    />
+  );
+}

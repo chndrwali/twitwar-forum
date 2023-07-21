@@ -6,7 +6,9 @@ export default {
   component: VoteButton,
 };
 
-const Template = (args) => <VoteButton {...args} />;
+function Template(args) {
+  return <VoteButton {...args} />;
+}
 
 export const UpVote = Template.bind({});
 UpVote.args = {

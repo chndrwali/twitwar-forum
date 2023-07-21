@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
